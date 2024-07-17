@@ -6,18 +6,21 @@ import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import CardOverflow from '@mui/joy/CardOverflow';
 import Chip from '@mui/joy/Chip';
-import IconButton from '@mui/joy/IconButton';
-import { Link } from '@mui/joy';
+import { Divider, Link } from '@mui/joy';
 import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
-import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import Star from '@mui/icons-material/Star';
+import IconButton from '@mui/joy/IconButton';
+
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+import Delete from '@mui/icons-material/Delete';
 
 PostCard.propTypes = {
   blog: PropTypes.object
 };
 
-export default function PostCard({ blog }) {
+export default function PostCard(props) {
+  const { blog: { id, title, href, description, category, image, review }, removePost } = props;
   const [isLiked, setIsLiked] = React.useState(false);
 
   return (
@@ -51,7 +54,7 @@ export default function PostCard({ blog }) {
             '--AspectRatio-maxHeight': { xs: '160px', sm: '9999px' },
           }}
         >
-          <img src={`${blog.image}`} />
+          <img src={`${image}`} />
           <Stack
             alignItems="center"
             direction="row"
@@ -83,36 +86,53 @@ export default function PostCard({ blog }) {
           alignItems="flex-start"
         >
           <div>
-            <Chip variant='outlined'>{blog.category}</Chip>
+            <Chip variant='outlined'>{category}</Chip>
             
             <Typography level="title-md">
               <Link
                 underline="none"
-                href={blog.href}
+                href={href}
                 sx={{ color: 'text.primary' }}
                 target="_blank"
               >
-                {blog.title}
+                {title}
               </Link>
             </Typography>
 
             <Typography level="title-sm">
-              {blog.description}
+              {description}
             </Typography>
           </div>
 
-          <IconButton
-            variant="plain"
-            size="sm"
-            color={isLiked ? 'danger' : 'neutral'}
-            onClick={() => setIsLiked((prev) => !prev)}
-            sx={{
-              display: { xs: 'none', sm: 'flex' },
-              borderRadius: '50%',
-            }}
-          >
-            <FavoriteRoundedIcon />
-          </IconButton>
+          <Stack direction="row">
+            <IconButton
+              variant="plain"
+              size="sm"
+              color={isLiked ? 'danger' : 'neutral'}
+              onClick={() => setIsLiked((prev) => !prev)}
+              sx={{
+                display: { xs: 'none', sm: 'flex' },
+                borderRadius: '50%',
+              }}
+            >
+              <FavoriteRoundedIcon />
+            </IconButton>
+
+            <Divider orientation='vertical' />
+
+            <IconButton
+              variant="plain"
+              size="sm"
+              color={isLiked ? 'danger' : 'neutral'}
+              onClick={() => removePost(id)}
+              sx={{
+                display: { xs: 'none', sm: 'flex' },
+                borderRadius: '50%',
+              }}
+            >
+              <Delete />
+            </IconButton>
+          </Stack>
         </Stack>
 
         <Stack direction="row" sx={{ mt: 'auto' }}>
