@@ -136,7 +136,7 @@ export default function Header() {
         <Input
           size="sm"
           variant="outlined"
-          placeholder="Search anything…"
+          placeholder="Search nothing…"
           startDecorator={<SearchRoundedIcon color="primary" />}
           endDecorator={
             <IconButton
