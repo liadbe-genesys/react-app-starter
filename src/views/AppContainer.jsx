@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CssVarsProvider } from '@mui/joy/styles';
+import { experimental_extendTheme,  Experimental_CssVarsProvider, THEME_ID } from '@mui/material/styles';
 import CssBaseline from '@mui/joy/CssBaseline';
 import Button from '@mui/joy/Button';
 import Stack from '@mui/joy/Stack';
@@ -12,8 +13,9 @@ import { navigationData } from '../data/navigationData';
 
 export default function AppContainer() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-
+  const materialTheme = experimental_extendTheme();
   return (
+    <Experimental_CssVarsProvider theme={{ [THEME_ID]: materialTheme }}>
     <CssVarsProvider disableTransitionOnChange>
       <CssBaseline />
 
@@ -77,5 +79,6 @@ export default function AppContainer() {
         
       </Layout.Root>
     </CssVarsProvider>
+    </Experimental_CssVarsProvider>
   );
 }
