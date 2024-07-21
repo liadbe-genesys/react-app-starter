@@ -1,9 +1,11 @@
 import { Stack } from "@mui/system";
 import PostCard from "../components/PostCard";
 import { Grid } from "@mui/joy";
-import { useScatterChartProps } from "@mui/x-charts/internals";
 import { useState } from "react";
 
+/**
+ * Fake data
+ */
 const blogsData = [
   {
     id: "001",
@@ -40,8 +42,9 @@ const blogsData = [
   }
 ]
 
-// const { category, title, rareFind = false, liked = false, image } = props;
-
+/**
+ * BlogPosts view is basically a view container for <PostCard /> components.
+ */
 export default function BlogPosts() {
   const [blogPosts, setBlogPosts] = useState(blogsData);
 

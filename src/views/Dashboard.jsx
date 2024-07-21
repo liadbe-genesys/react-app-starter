@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import ChartContainer from '../components/ChartContainer';
 import BarChartGroups from '../components/BarChartGroups';
 import BarChartStack from '../components/BarChartStack';
@@ -7,8 +6,11 @@ import PieChart from '../components/PieChart';
 import LineChart from '../components/LineChart';
 import ScatterChart from '../components/ScatterChart';
 
+/**
+ * Dashbord is the currently presenting many different chart components, 
+ * each is wrapped with <ChartContainer /> component.
+ */
 export default function Dashboard() {
-
   return (
     <div>
         <ChartContainer title="Bar Chart with Groups">
