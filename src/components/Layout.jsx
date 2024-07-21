@@ -1,8 +1,9 @@
 import * as React from 'react';
-import Box, { BoxProps } from '@mui/joy/Box';
+import Box from '@mui/joy/Box';
 import Sheet from '@mui/joy/Sheet';
+import PropTypes from 'prop-types';
 
-function Root(props: BoxProps) {
+function Root(props) {
   return (
     <Box
       {...props}
@@ -24,7 +25,7 @@ function Root(props: BoxProps) {
   );
 }
 
-function Header(props: BoxProps) {
+function Header(props) {
   return (
     <Box
       component="header"
@@ -52,7 +53,7 @@ function Header(props: BoxProps) {
   );
 }
 
-function SideNav(props: BoxProps) {
+function SideNav(props) {
   return (
     <Box
       component="nav"
@@ -75,7 +76,7 @@ function SideNav(props: BoxProps) {
   );
 }
 
-function SidePane(props: BoxProps) {
+function SidePane(props) {
   return (
     <Box
       className="Inbox"
@@ -96,7 +97,7 @@ function SidePane(props: BoxProps) {
   );
 }
 
-function Main(props: BoxProps) {
+function Main(props) {
   return (
     <Box
       component="main"
@@ -107,9 +108,11 @@ function Main(props: BoxProps) {
   );
 }
 
-function SideDrawer(
-  props: BoxProps & { onClose: React.MouseEventHandler<HTMLDivElement> },
-) {
+SideDrawer.propTypes = {
+  onClose: PropTypes.func
+};
+
+function SideDrawer(props) {
   const { onClose, ...other } = props;
   return (
     <Box
