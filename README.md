@@ -12,7 +12,7 @@
 - GitKraken: https://www.gitkraken.com/
 - After you fork clone the repository to download it localy and start working
 
-# Step 3: Inatall dependencies
+# Step 3: Install dependencies
 - After opening your version of the repo run **npm i** in the terminal (while in the folder of the repo). This will take a bit and it will download all the packages needed to run the app
 
 # Step 4: Preview the project
