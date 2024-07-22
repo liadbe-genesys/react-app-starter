@@ -18,7 +18,7 @@ export default function ActionModal({title, onSave, children}) {
     <React.Fragment>
       {/** The button that open the modal. you can change the text of the button below */}
       <Button variant="outlined" color="neutral" onClick={() => setOpen(true)}>
-        Open modal
+        Add new post
       </Button>
 
       <Modal

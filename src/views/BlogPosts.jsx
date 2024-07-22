@@ -1,7 +1,8 @@
-import { Stack } from "@mui/system";
-import PostCard from "../components/PostCard";
-import { Grid } from "@mui/joy";
 import { useState } from "react";
+import { Stack } from "@mui/system";
+import { Grid, Input } from "@mui/joy";
+import PostCard from "../components/PostCard";
+import ActionModal from "../components/ActionModal";
 
 /**
  * Fake data
@@ -42,15 +43,46 @@ const blogsData = [
   }
 ]
 
+const defaultPost = {
+  id: '',
+  title: '',
+  href: '',
+  description: '',
+  category: '',
+  image: 'https://picsum.photos/200',
+  review: 3
+}
+
 /**
  * BlogPosts view is basically a view container for <PostCard /> components.
  */
 export default function BlogPosts() {
   const [blogPosts, setBlogPosts] = useState(blogsData);
+  const [newPost, setNewPost] = useState(defaultPost);
+  
+  const title = "Add new post";
+
+  const onSave = () => {
+    const post = {...newPost};
+    const blogPostsArr = [...blogPosts];
+    post.id = Math.random();
+    blogPostsArr.push(post);
+
+    setBlogPosts(blogPostsArr)
+    setNewPost(defaultPost);
+  }
 
   return (
     <Grid container>
       <Grid sm={12} md={8}>
+      <ActionModal title={title} onSave={onSave}>
+        <div style={{display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '10px'}}>
+          <Input placeholder="Title" variant="outlined" onChange={(e) => setNewPost({...newPost, title: e.target.value})} />
+          <Input placeholder="Href" variant="outlined" onChange={(e) => setNewPost({...newPost, href: e.target.value})}/>
+          <Input placeholder="Description" variant="outlined" onChange={(e) => setNewPost({...newPost, description: e.target.value})}/>
+          <Input placeholder="Category" variant="outlined" onChange={(e) => setNewPost({...newPost, category: e.target.value})}/>
+        </div>
+      </ActionModal>
         <Stack 
           direction="column" 
           spacing="1rem"
