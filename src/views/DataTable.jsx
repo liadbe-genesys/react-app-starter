@@ -12,14 +12,6 @@ export default function GridExample() {
     { make: "Toyota", model: "Corolla", price: 29600, electric: false },
     { make: "Toyota", model: "Corolla", price: 29600, electric: false },
     { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-    { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-    { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-    { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-    { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-    { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-    { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-    { make: "Toyota", model: "Corolla", price: 29600, electric: false },
-    { make: "Toyota", model: "Corolla", price: 29600, electric: false },
   ];
   
   // Column Definitions: Defines the columns to be displayed.
@@ -34,7 +26,7 @@ export default function GridExample() {
  
   return (
       <>
-        <Table cols={colDefs} rows={rowData} size='medium'/>
+        <Table cols={colDefs} rows={rowData} size='large'/>
       </>
    )
  }

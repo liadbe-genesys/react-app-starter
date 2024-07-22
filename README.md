@@ -1,8 +1,20 @@
-# React + Vite
+## Project installation
+1. Install node - v20.15.1 (LTS) - https://nodejs.org/en/download/prebuilt-installer
+2. Install git - https://github.com/git-guides/install-git
+3. download VScode IDE - https://code.visualstudio.com/download
+4. Clone the repository - https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
+5. In VSCode, navigate to Terminal menu, open new terminal:
+  * Run `npm install`
+  * Run `npm run dev` and open the browser on http://localhost:5173/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Additional Resources
+### Joy UI
+Joy UI is an open-source React component library that follows a lightly opinionated design direction, for a clean and modern UI that gives you plenty of room to customize the look and feel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You don't need to install anything, it will all be part of the project installation.
+* https://mui.com/joy-ui/getting-started/
+
+
+
+
