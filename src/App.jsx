@@ -12,7 +12,6 @@ import '@fontsource/inter';
  * Changes made here will affect all of the app's HTML elements. 
  */
 const theme = extendTheme({
-  direction: 'rtl',
   colorSchemes: {
     light: {
       palette: {

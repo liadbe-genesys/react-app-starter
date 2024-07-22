@@ -30,13 +30,13 @@ export default function Table(props) {
  
   return (
       <div
-      className="ag-theme-quartz"
-      style={{ height: 500, width: tableWidth }}
+        className="ag-theme-quartz"
+        style={{ height: 500, width: tableWidth }}
       >
         <AgGridReact
-            rowData={props.rows}
-            columnDefs={props.cols}
-            defaultColDef={defaultColDef}
+          rowData={props.rows}
+          columnDefs={props.cols}
+          defaultColDef={defaultColDef}
         />
       </div>
    )
