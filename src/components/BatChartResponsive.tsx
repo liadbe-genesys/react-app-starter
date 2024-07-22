@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Slider from '@mui/material/Slider';
 import data from '../data/chartsData.json';
 import { BarChart } from '@mui/x-charts';
+import { Box, Slider, Typography } from '@mui/joy';
 
 const highlightScope = {
     highlighted: 'series',

@@ -1,11 +1,11 @@
 import DataTable from "../views/DataTable";
-import Home from "../views/Home";
 import DashboardOutlined from '@mui/icons-material/DashboardOutlined';
 import TableChartOutlined from '@mui/icons-material/TableChartOutlined';
 import PagesOutlined from '@mui/icons-material/PagesOutlined';
 import CloudQueueOutlined from '@mui/icons-material/CloudQueueOutlined';
 import Dashboard from "../views/Dashboard";
 import BlogPosts from "../views/BlogPosts";
+import FeaturePage from "../views/FeaturePage";
 
 export const navigationData = [
   { 
@@ -26,10 +26,10 @@ export const navigationData = [
     element: <BlogPosts />, 
     icon: <PagesOutlined />
   },
-  { 
-    displayName: 'External Resources', 
-    path: 'external-resources', 
-    element: <Home />, 
-    icon: <CloudQueueOutlined />
-  },
+  // { 
+  //   displayName: 'External Resources', 
+  //   path: 'external-resources', 
+  //   element: <FeaturePage />, 
+  //   icon: <CloudQueueOutlined />
+  // },
 ];

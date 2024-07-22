@@ -92,7 +92,7 @@ export default function Header() {
           <LanguageRoundedIcon />
         </IconButton>
 
-        {navigationData.filter(nav => nav.path !== "/").map(nav => (
+        {navigationData.map(nav => (
           <Button
             key={nav.path}
             variant="plain"
