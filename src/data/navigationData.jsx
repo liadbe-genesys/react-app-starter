@@ -5,6 +5,7 @@ import TableChartOutlined from '@mui/icons-material/TableChartOutlined';
 import PagesOutlined from '@mui/icons-material/PagesOutlined';
 import CloudQueueOutlined from '@mui/icons-material/CloudQueueOutlined';
 import Dashboard from "../views/Dashboard";
+import BlogPosts from "../views/BlogPosts";
 
 export const navigationData = [
   { 
@@ -22,7 +23,7 @@ export const navigationData = [
   { 
     displayName: 'Blog Posts', 
     path: 'blog-posts', 
-    element: <Home />, 
+    element: <BlogPosts />, 
     icon: <PagesOutlined />
   },
   { 

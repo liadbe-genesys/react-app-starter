@@ -1,22 +1,21 @@
 import { useState } from 'react';
-import { CssVarsProvider } from '@mui/joy/styles';
-import CssBaseline from '@mui/joy/CssBaseline';
 import Button from '@mui/joy/Button';
 import Stack from '@mui/joy/Stack';
-
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Navigation from '../components/Navigation';
 import { Outlet } from 'react-router-dom';
 import { navigationData } from '../data/navigationData';
 
+/**
+ * Main container of the app, responsible for page layout.
+ * All pages being navigated are rendered here, using <Outlet />.
+ */
 export default function AppContainer() {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
-    <CssVarsProvider disableTransitionOnChange>
-      <CssBaseline />
-
+    <>
       {drawerOpen && (
         <Layout.SideDrawer onClose={() => setDrawerOpen(false)}>
           <Navigation />
@@ -76,6 +75,6 @@ export default function AppContainer() {
         </Layout.Main>
         
       </Layout.Root>
-    </CssVarsProvider>
+    </>
   );
 }
