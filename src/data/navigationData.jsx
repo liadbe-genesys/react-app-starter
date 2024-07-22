@@ -26,10 +26,10 @@ export const navigationData = [
     element: <BlogPosts />, 
     icon: <PagesOutlined />
   },
-  // { 
-  //   displayName: 'External Resources', 
-  //   path: 'external-resources', 
-  //   element: <FeaturePage />, 
-  //   icon: <CloudQueueOutlined />
-  // },
+  { 
+    displayName: 'External Resources', 
+    path: 'external-resources', 
+    element: <FeaturePage />, 
+    icon: <CloudQueueOutlined />
+  },
 ];
