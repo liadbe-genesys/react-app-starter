@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Stack } from "@mui/system";
-import { Grid, Input } from "@mui/joy";
+import { Grid, Input, Typography } from "@mui/joy";
 import PostCard from "../components/PostCard";
 import ActionModal from "../components/ActionModal";
 
@@ -43,6 +43,7 @@ const blogsData = [
   }
 ]
 
+// Init data for the state
 const defaultPost = {
   id: '',
   title: '',
@@ -60,49 +61,60 @@ export default function BlogPosts() {
   const [blogPosts, setBlogPosts] = useState(blogsData);
   const [newPost, setNewPost] = useState(defaultPost);
   
-  const title = "Add new post";
+  // Title we send to the modal
+  const title = "Add New Post";
 
+  // save function that we send to the modal
   const onSave = () => {
     const post = {...newPost};
     const blogPostsArr = [...blogPosts];
     post.id = Math.random();
     blogPostsArr.push(post);
 
+    // updating the states
     setBlogPosts(blogPostsArr)
     setNewPost(defaultPost);
   }
 
   return (
-    <Grid container>
-      <Grid sm={12} md={8}>
-      <ActionModal title={title} onSave={onSave}>
-        <div style={{display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '10px'}}>
-          <Input placeholder="Title" variant="outlined" onChange={(e) => setNewPost({...newPost, title: e.target.value})} />
-          <Input placeholder="Href" variant="outlined" onChange={(e) => setNewPost({...newPost, href: e.target.value})}/>
-          <Input placeholder="Description" variant="outlined" onChange={(e) => setNewPost({...newPost, description: e.target.value})}/>
-          <Input placeholder="Category" variant="outlined" onChange={(e) => setNewPost({...newPost, category: e.target.value})}/>
-        </div>
-      </ActionModal>
-        <Stack 
-          direction="column" 
-          spacing="1rem"
-        >
-          {blogPosts.map(blog => 
-            <PostCard 
-              key={blog.id} 
-              blog={blog}
-              removePost={(id) => {
-                let clonedBlogPosts = blogPosts.slice();
-                const blogIdToRemove = blogPosts.findIndex(blog => id === blog.id);
-                if (blogIdToRemove > -1) {
-                  clonedBlogPosts.splice(blogIdToRemove, 1);
-                  setBlogPosts(clonedBlogPosts);
-                }
-              }} 
-            />
-          )}
-        </Stack>
+    <>
+      <Typography level="h1" sx={{ marginBottom: '1rem' }}>
+        Blog Posts
+      </Typography>
+      <Grid direction="row" justifyContent="space-between" container>
+        <Grid sm={12} md={8}>
+          <Stack 
+            direction="column" 
+            spacing="1rem"
+          >
+            {blogPosts.map(blog => 
+              <PostCard 
+                key={blog.id} 
+                blog={blog}
+                removePost={(id) => {
+                  let clonedBlogPosts = blogPosts.slice();
+                  const blogIdToRemove = blogPosts.findIndex(blog => id === blog.id);
+                  if (blogIdToRemove > -1) {
+                    clonedBlogPosts.splice(blogIdToRemove, 1);
+                    setBlogPosts(clonedBlogPosts);
+                  }
+                }} 
+              />
+            )}
+          </Stack>
+        </Grid>
+        <Grid>
+          {/** Using the modal */}
+          <ActionModal title={title} onSave={onSave}>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '10px'}}>
+              <Input placeholder="Title" variant="outlined" onChange={(e) => setNewPost({...newPost, title: e.target.value})} />
+              <Input placeholder="Href" variant="outlined" onChange={(e) => setNewPost({...newPost, href: e.target.value})}/>
+              <Input placeholder="Description" variant="outlined" onChange={(e) => setNewPost({...newPost, description: e.target.value})}/>
+              <Input placeholder="Category" variant="outlined" onChange={(e) => setNewPost({...newPost, category: e.target.value})}/>
+            </div>
+          </ActionModal>
+        </Grid>
       </Grid>
-    </Grid>
+    </>
   );
 }

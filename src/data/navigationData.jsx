@@ -27,8 +27,8 @@ export const navigationData = [
     icon: <PagesOutlined />
   },
   { 
-    displayName: 'External Resources', 
-    path: 'external-resources', 
+    displayName: 'Empty Page', 
+    path: 'empty-page', 
     element: <FeaturePage />, 
     icon: <CloudQueueOutlined />
   },

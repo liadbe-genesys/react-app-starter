@@ -5,20 +5,27 @@ import ModalClose from '@mui/joy/ModalClose';
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 
-
+/**
+ * 
+ * @param title - Modal title
+ * @param onSave - Function we pass to the modal to execute when the user press save
+ * @param children - reserved param. the data in the children param is dynamic, and can change. Read more about props.children in react 
+ */
 export default function ActionModal({title, onSave, children}) {
   const [open, setOpen] = useState(false);
 
   const onClickSave = () => {
+    // calling the onSave function we pass in the params
     onSave();
+    // updating the state
     setOpen(false);
   }
 
   return (
     <React.Fragment>
       {/** The button that open the modal. you can change the text of the button below */}
-      <Button variant="outlined" color="neutral" onClick={() => setOpen(true)}>
-        Add new post
+      <Button onClick={() => setOpen(true)}>
+        Add New Post
       </Button>
 
       <Modal

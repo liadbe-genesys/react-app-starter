@@ -5,7 +5,6 @@ import Typography from '@mui/joy/Typography';
 import IconButton from '@mui/joy/IconButton';
 import Stack from '@mui/joy/Stack';
 import Avatar from '@mui/joy/Avatar';
-import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
 import Tooltip from '@mui/joy/Tooltip';
 import Dropdown from '@mui/joy/Dropdown';
@@ -17,7 +16,6 @@ import Drawer from '@mui/joy/Drawer';
 import ModalClose from '@mui/joy/ModalClose';
 import DialogTitle from '@mui/joy/DialogTitle';
 
-import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded';
 import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded';
 import LanguageRoundedIcon from '@mui/icons-material/LanguageRounded';
@@ -133,38 +131,6 @@ export default function Header() {
           alignItems: 'center',
         }}
       >
-        <Input
-          size="sm"
-          variant="outlined"
-          placeholder="Search nothing…"
-          startDecorator={<SearchRoundedIcon color="primary" />}
-          endDecorator={
-            <IconButton
-              variant="outlined"
-              color="neutral"
-              sx={{ bgcolor: 'background.level1' }}
-            >
-              <Typography level="title-sm" textColor="text.icon">
-                ⌘ K
-              </Typography>
-            </IconButton>
-          }
-          sx={{
-            alignSelf: 'center',
-            display: {
-              xs: 'none',
-              sm: 'flex',
-            },
-          }}
-        />
-        <IconButton
-          size="sm"
-          variant="outlined"
-          color="neutral"
-          sx={{ display: { xs: 'inline-flex', sm: 'none' }, alignSelf: 'center' }}
-        >
-          <SearchRoundedIcon />
-        </IconButton>
 
         <ColorSchemeToggle />
         

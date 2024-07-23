@@ -31,12 +31,15 @@ export default function Table(props) {
   return (
       <div
         className="ag-theme-quartz"
-        style={{ height: 500, width: tableWidth }}
+        style={{ height: 'calc(100% - 100px)', width: tableWidth }}
       >
         <AgGridReact
           rowData={props.rows}
           columnDefs={props.cols}
           defaultColDef={defaultColDef}
+          pagination={true}
+          paginationPageSize={100}
+          paginationPageSizeSelector={[20, 50, 100, 200, 500, 1000]}
         />
       </div>
    )

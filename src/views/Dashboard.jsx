@@ -5,6 +5,7 @@ import BarChartResponsive from '../components/BatChartResponsive';
 import PieChart from '../components/PieChart';
 import LineChart from '../components/LineChart';
 import ScatterChart from '../components/ScatterChart';
+import { Typography } from '@mui/joy';
 
 /**
  * Dashbord is the currently presenting many different chart components, 
@@ -13,6 +14,9 @@ import ScatterChart from '../components/ScatterChart';
 export default function Dashboard() {
   return (
     <div>
+        <Typography level="h1" sx={{ marginBottom: '1rem' }}>
+          Overview
+        </Typography>
         <ChartContainer title="Bar Chart with Groups">
           <BarChartGroups />
         </ChartContainer>
