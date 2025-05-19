@@ -3,9 +3,11 @@ import DashboardOutlined from '@mui/icons-material/DashboardOutlined';
 import TableChartOutlined from '@mui/icons-material/TableChartOutlined';
 import PagesOutlined from '@mui/icons-material/PagesOutlined';
 import CloudQueueOutlined from '@mui/icons-material/CloudQueueOutlined';
+import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
 import Dashboard from "../views/Dashboard";
 import BlogPosts from "../views/BlogPosts";
 import FeaturePage from "../views/FeaturePage";
+import AskModel from "../views/AskModel";
 
 export const navigationData = [
   { 
@@ -25,6 +27,12 @@ export const navigationData = [
     path: 'blog-posts', 
     element: <BlogPosts />, 
     icon: <PagesOutlined />
+  },
+  { 
+    displayName: 'Ask AI', 
+    path: 'model-ask', 
+    element: <AskModel />, 
+    icon: <PsychologyOutlinedIcon />
   },
   { 
     displayName: 'Empty Page', 

@@ -29,5 +29,6 @@ You don't need to install anything, it will all be part of the project installat
 AG Grid is the industry standard Data Grid and Charting solution for JavaScript Enterprise Applications
 * https://www.ag-grid.com/react-data-grid/getting-started/
 
-### Gov.il API Resources
-* https://data.gov.il/dataset
+### Setting up the LLM API
+To make the Ask AI page work you will have to generate an api key for your requests. Go to https://openrouter.ai/ and log in with your student gmail account (or any other gmail).
+Then go to Keys in the setting menu and you will see a button saying **Create API Key**. Click it and copy the key you get. Inside the `AskModel.jsx` file you will see a place in the request headers to paste that key. And thats it, as long as you use a free model you can make requests to it through your app. Remember that these API provider enforce a limit to the amount of requests you can make to **50 per day**. So I suggest you use several student accounts to get more keys.
