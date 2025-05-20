@@ -4,10 +4,12 @@ import TableChartOutlined from '@mui/icons-material/TableChartOutlined';
 import PagesOutlined from '@mui/icons-material/PagesOutlined';
 import CloudQueueOutlined from '@mui/icons-material/CloudQueueOutlined';
 import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
+import ListAltOutlinedIcon from '@mui/icons-material/ListAltOutlined';
 import Dashboard from "../views/Dashboard";
 import BlogPosts from "../views/BlogPosts";
 import FeaturePage from "../views/FeaturePage";
 import AskModel from "../views/AskModel";
+import BuildLearningPlan from "../views/BuildLearningPlan";
 
 export const navigationData = [
   { 
@@ -33,6 +35,12 @@ export const navigationData = [
     path: 'model-ask', 
     element: <AskModel />, 
     icon: <PsychologyOutlinedIcon />
+  },
+  { 
+    displayName: 'Build a Plan', 
+    path: 'puild-a-plan', 
+    element: <BuildLearningPlan />, 
+    icon: <ListAltOutlinedIcon />
   },
   { 
     displayName: 'Empty Page', 
