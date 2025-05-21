@@ -27,7 +27,7 @@ export default function AskModel() {
       ],
     }, {
       headers: {
-        Authorization: 'Bearer <YOUR API KEY>', // here place your api key from https://openrouter.ai/settings/keys
+        Authorization: 'Bearer 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', // here place your api key from https://openrouter.ai/settings/keys
         'Content-Type': 'application/json',
       }
     })
