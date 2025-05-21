@@ -8,6 +8,7 @@ import Dashboard from "../views/Dashboard";
 import BlogPosts from "../views/BlogPosts";
 import FeaturePage from "../views/FeaturePage";
 import AskModel from "../views/AskModel";
+import BuildLearningPlan from "../views/LearningPlan";
 
 export const navigationData = [
   { 
@@ -34,10 +35,17 @@ export const navigationData = [
     element: <AskModel />, 
     icon: <PsychologyOutlinedIcon />
   },
+  // --------------------
+  // TODO: Add a New Page
+  // displayName - title of the page 
+  // path - relative url to the page  
+  // element -  the element to be rendered - <FeaturePage /> component 
+  // icon - the icon to be shown <CloudQueueOutlined />
+  // --------------------
   { 
-    displayName: 'Empty Page', 
-    path: 'empty-page', 
-    element: <FeaturePage />, 
-    icon: <CloudQueueOutlined />
+    displayName: 'My New Page', 
+    path: 'empty-page',  
+    element: <BuildLearningPlan />, 
+    icon: <CloudQueueOutlined />,
   },
 ];
