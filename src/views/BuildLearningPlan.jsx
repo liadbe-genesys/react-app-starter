@@ -1,10 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
-import {
-  TextField,
-  Button,
-} from '@mui/material';
 import Table from '../components/Table';
+import { Input, Stack, Button, Typography, Box } from '@mui/joy';
 
 export default function BuildLearningPlan() {
   const [topic, setTopic] = useState('');
@@ -35,6 +32,7 @@ export default function BuildLearningPlan() {
   }
 
   function processResponse(response) {
+    console.log(response)
     try {
       const parsedResponse = JSON.parse(response);
       console.log(parsedResponse);
@@ -55,7 +53,7 @@ export default function BuildLearningPlan() {
       ],
     }, {
       headers: {
-        Authorization: 'Bearer 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', // here place your api key from https://openrouter.ai/settings/keys
+        Authorization: 'Bearer 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', // here place your api key from https://openrouter.ai/settings/keys
         'Content-Type': 'application/json',
       }
     })
@@ -72,23 +70,30 @@ export default function BuildLearningPlan() {
   }
 
   return (
-    <>
-      <div style={{ padding: '2rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-      <TextField
-        label="Topic"
-        variant="outlined"
-        fullWidth
-        onChange={(e) => setTopic(e.target.value)}
-      />
-      <TextField
-          label="Time in Hours"
-          variant="outlined"
-          fullWidth
-          onChange={(e) => setTime(e.target.value)}
-      />
-      <Button variant="contained" color="primary" onClick={invokeModel}>
-        Send
-      </Button></div>
-      {data.length > 0 && <Table cols={cols} rows={data} size='large'/>}
-  </>);
+      <>
+        <Typography level="h1" sx={{ marginBottom: '1rem' }}>
+          Learning Plan AI Builder        
+        </Typography>
+
+        <Stack direction="row" spacing={2} sx={{marginBottom: '1.5rem'}}>
+          <Input
+            placeholder="Subject"
+            variant="outlined"
+            fullWidth
+            onChange={(e) => setTopic(e.target.value)}
+          />
+          <Input
+              placeholder="Time in hours (# of lessons)"
+              variant="outlined"
+              fullWidth
+              onChange={(e) => setTime(e.target.value)}
+          />
+          <Button color="primary" onClick={invokeModel}>
+            Send
+          </Button>
+        </Stack>
+
+        {data.length > 0 && <Table cols={cols} rows={data} size='large'/>}
+    </>
+  );
 }

@@ -78,18 +78,6 @@ export default function Header() {
         spacing={1}
         sx={{ display: { xs: 'none', sm: 'flex' } }}
       >
-        <IconButton
-          size="md"
-          variant="outlined"
-          color="neutral"
-          sx={{
-            display: { xs: 'none', sm: 'inline-flex' },
-            borderRadius: '50%',
-          }}
-        >
-          <LanguageRoundedIcon />
-        </IconButton>
-
         {navigationData.map(nav => (
           <Button
             key={nav.path}
@@ -116,7 +104,7 @@ export default function Header() {
           onClose={() => setOpen(false)}
         >
           <ModalClose />
-          <DialogTitle>Acme Co.</DialogTitle>
+          <DialogTitle>My App</DialogTitle>
           <Box sx={{ px: 1 }}>
             <TeamNav />
           </Box>

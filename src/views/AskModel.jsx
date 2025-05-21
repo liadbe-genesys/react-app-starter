@@ -1,12 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
-import {
-  TextField,
-  Button,
-  Modal,
-  Box,
-  Typography
-} from '@mui/material';
+import { Box, Button, Input, Modal, ModalClose, Sheet, Stack, TextField, Typography } from '@mui/joy';
+import ActionModal from '../components/ActionModal';
+
 
 export default function AskModel() {
   const [prompt, setPrompt] = useState('');
@@ -27,7 +23,7 @@ export default function AskModel() {
       ],
     }, {
       headers: {
-        Authorization: 'Bearer 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', // here place your api key from https://openrouter.ai/settings/keys
+        Authorization: 'Bearer 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', // here place your api key from https://openrouter.ai/settings/keys
         'Content-Type': 'application/json',
       }
     })
@@ -44,37 +40,46 @@ export default function AskModel() {
   }
 
   return (
-    <div style={{ padding: '2rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-      <TextField
-        label="Ask something"
-        variant="outlined"
-        fullWidth
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-      />
-      <Button variant="contained" color="primary" onClick={invokeModel}>
-        Send
-      </Button>
+    <div>
+      <Typography level="h1" sx={{ marginBottom: '1rem' }}>
+        Ask AI
+      </Typography>
 
-      <Modal open={open} onClose={handleClose}>
-        <Box
+      <Stack direction="row" spacing={2}>
+        <Input
+          placeholder="Ask me anything"
+          variant="outlined"
+          fullWidth
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+        />
+        <Button color="primary" onClick={invokeModel}>
+          Send
+        </Button>
+      </Stack>
+
+      <Modal 
+        variant="outlined" 
+        open={open} 
+        onClose={handleClose}
+        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+      >
+        <Sheet
           sx={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: 500,
-            bgcolor: 'background.paper',
-            boxShadow: 24,
-            p: 4,
-            borderRadius: 2,
+            minWidth: '60vw',
+            maxWidth: '80vw',
+            maxHeight: '80vh',
+            borderRadius: 'md',
+            p: 3,
+            boxShadow: 'lg',
           }}
         >
-          <Typography variant="h6" gutterBottom>Model Response</Typography>
-          <Typography variant="body1" sx={{ whiteSpace: 'pre-wrap' }}>
+          <ModalClose variant="plain" sx={{ m: 1 }} />
+          <Typography level="title-lg" gutterBottom>Model Response</Typography>
+          <Typography level="body-sm" sx={{ whiteSpace: 'pre-wrap' }}>
             {response}
           </Typography>
-        </Box>
+        </Sheet>
       </Modal>
     </div>
   );

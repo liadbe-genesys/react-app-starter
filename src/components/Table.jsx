@@ -18,9 +18,9 @@ export default function Table(props) {
     } else if (props.size === 'medium') {
       setTableWidth('50vw');
     } else if (props.size === 'large') {
-      setTableWidth('80vw');
+      setTableWidth('100%');
     } else {
-      setTableWidth('80vw');
+      setTableWidth('100%');
     }
   }, [props])
 
@@ -31,7 +31,7 @@ export default function Table(props) {
   return (
       <div
         className="ag-theme-quartz"
-        style={{ height: 'calc(100% - 100px)', width: tableWidth }}
+        style={{ height: 'calc(100vh - 220px)', width: tableWidth }}
       >
         <AgGridReact
           rowData={props.rows}

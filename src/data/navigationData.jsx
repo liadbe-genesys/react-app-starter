@@ -37,8 +37,8 @@ export const navigationData = [
     icon: <PsychologyOutlinedIcon />
   },
   { 
-    displayName: 'Build a Plan', 
-    path: 'puild-a-plan', 
+    displayName: 'Learning Plan AI Builder', 
+    path: 'build-learning-plan', 
     element: <BuildLearningPlan />, 
     icon: <ListAltOutlinedIcon />
   },
@@ -52,7 +52,7 @@ export const navigationData = [
   { 
     displayName: 'My New Page', 
     path: 'empty-page',  
-    element: <BuildLearningPlan />, 
+    element: <FeaturePage />, 
     icon: <CloudQueueOutlined />,
   },
 ];

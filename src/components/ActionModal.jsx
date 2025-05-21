@@ -67,7 +67,7 @@ export default function ActionModal({title, onSave, children}) {
           {onSave &&
             <div style={{display: 'flex', justifyContent: 'flex-end', gap: '15px', marginTop: '20px'}}>
               <Button variant="outlined" onClick={() => setOpen(false)}>Cancel</Button>
-              <Button onClick={onClickSave}>SAVE</Button>
+              <Button onClick={onClickSave}>Save</Button>
             </div>
           }
         </Sheet>
