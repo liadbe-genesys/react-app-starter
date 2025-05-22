@@ -5,13 +5,15 @@
 3. Download VScode IDE - https://code.visualstudio.com/download
 
 ## Project installation
-1. Clone the repository - https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository
+1. In terminal - git clone https://github.com/liadbe-genesys/react-app-starter.git
 2. In VSCode:
   * Open the project folder
-  * Navigate to Terminal menu, open new terminal
+  * Navigate to Terminal menu
+  * Open a new terminal
 3. In the terminal:
   * Run `npm install`
-  * Run `npm run dev` and open the browser on http://localhost:5173/
+  * Run `npm run dev`
+4. Open the browser on http://localhost:5173/
 
 
 ## Additional Resources

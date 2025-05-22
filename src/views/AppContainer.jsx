@@ -22,38 +22,6 @@ export default function AppContainer() {
         </Layout.SideDrawer>
       )}
 
-      <Stack
-        id="tab-bar"
-        direction="row"
-        justifyContent="space-around"
-        spacing={1}
-        sx={{
-          display: { xs: 'flex', sm: 'none' },
-          zIndex: '999',
-          bottom: 0,
-          position: 'fixed',
-          width: '100dvw',
-          py: 2,
-          backgroundColor: 'background.body',
-          borderTop: '1px solid',
-          borderColor: 'divider',
-        }}
-      >
-        {navigationData.map(nav =>
-          <Button
-            key={nav.path}
-            variant="plain"
-            color="neutral"
-            component="a"
-            href={nav.path}
-            size="sm"
-            startDecorator={nav.icon}
-            sx={{ flexDirection: 'column', '--Button-gap': 0 }}
-          />
-        )}
-
-      </Stack>
-
       <Layout.Root
         sx={{
           ...(drawerOpen && {

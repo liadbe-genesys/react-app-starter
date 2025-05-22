@@ -32,7 +32,6 @@ export default function BuildLearningPlan() {
   }
 
   function processResponse(response) {
-    console.log(response)
     try {
       const parsedResponse = JSON.parse(response);
       console.log(parsedResponse);
@@ -53,7 +52,7 @@ export default function BuildLearningPlan() {
       ],
     }, {
       headers: {
-        Authorization: 'Bearer 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', // here place your api key from https://openrouter.ai/settings/keys
+        Authorization: 'Bearer <API_KEY_COMES_HERE>', // here place your api key from https://openrouter.ai/settings/keys
         'Content-Type': 'application/json',
       }
     })
